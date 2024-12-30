@@ -1,0 +1,29 @@
+let a = document.querySelector('#a');
+let b = document.querySelector('#b');
+let c = document.querySelector('#c');
+let btn = document.querySelector('button');
+let p = document.querySelector('p');
+
+btn.addEventListener('click',()=> {
+   
+  
+    
+    a = a.value;  if (a === '') a = 1; a = Number(a);
+    b = b.value;  if (b === '') b = 0; b = Number(b);
+    c = c.value;  if (c === '') c = 0; c = Number(c);
+    console.log(a);
+    console.log(b);
+    console.log(c);
+
+    let d = (b*b)- (4*a*c);
+    console.log(`d = ${d}`);
+
+    if( d > 0) {
+    let x1, x2;
+    x1 = (-b + Math.sqrt(d))/2*a;
+    x2 = (-b - Math.sqrt(d))/2*a;
+    p.textContent = `x1 = ${x1} x2 = ${x2}`
+    } else {
+    p.textContent = 'no solution';
+    }
+});
